@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12 mb-5" style="text-align: center;">
+            <h5>Жанры</h5>
+        </div>
+        <div class="col-2 mt-2 mb-2" *ngFor="let catList of categoryList">
+            <div class="card shadow-sm">
+                <img src="https://image.tmdb.org/t/p/w500/{{catList.backdrop_path}}" alt="MovieImage">                
+                <div class="card-body">
+                    <p class="card-text">
+
+                    </p>
+                    <div class="">
+                        <small class="text-crimson">{{ catList.release_date }}</small> <br>
+                        <small style="color: #e90451;">{{ catList.vote_average }}</small> <br>
+                        <div class="btn-group">
+                            <a routerLink="/movies/view-movie/{{catList.id}}" type="button" class="btn btn-sm btn-outline-secondary mt-2">View</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

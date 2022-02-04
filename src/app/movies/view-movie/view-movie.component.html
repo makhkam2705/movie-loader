@@ -1,0 +1,30 @@
+<script src="view-movie.component.ts"></script>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col-4 d-none d-lg-block">
+          <img src="https://image.tmdb.org/t/p/w500/{{movieData.backdrop_path}}" alt="MovieImage">
+        </div>
+        <div class="col-4 p-4 d-flex flex-column position-static">
+          <h3 class="mb-0">{{ movieData.title }}</h3>
+          <div>Genre: <span *ngFor="let genre of movieGenre"> {{genre.name}} </span></div>
+          <div>Release year: <span>{{ movieData.release_date }}</span></div>
+          <div>Running time: <span>{{ movieData.runtime }}</span> min</div>
+          <div>Popularity: <span>{{ movieData.popularity }}</span></div>
+          <p class="mb-auto mt-3">{{ movieData.overview }}</p>
+          <a routerLink="/movies"><i class="fa fa-arrow-left"></i></a>
+        </div>
+        <div class="col-4 d-none d-lg-block">
+          <iframe width="560" height="315"
+                  [src]="src"
+                  title="YouTube video player" frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write;
+                  encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
